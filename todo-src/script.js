@@ -5,7 +5,7 @@ var myApp = angular.module('app', []);
 myApp.controller('MainCtrl', function ($scope){
   $scope.todos = ["Learn Angular", "Learn node"];
   $scope.newItem = "";
-  
+
   $scope.addItem = function(){
     console.log("in add");
     if ($scope.newItem !== ""){
@@ -20,8 +20,19 @@ myApp.controller('MainCtrl', function ($scope){
     $scope.todos.splice(index, 1);
   }
     
-  
+  $scope.editItem = function(item) {
+    var index = $scope.todos.indexOf(item);
+    var todo = $scope.todos[index];
+    todo = angular.element(todo);
+    todo.find(angular.element('.todo-text')).css('text-decoration','line-through');
+  }
+  $scope.submitEdit = function(item) {
+    var index = $scope.todos.indexOf(item);
+    var todo = $scope.todos[index];
+    todo.text = $scope.submitText;
+  }
 });
+
 
 /*************************
  * Homework (not rly):

@@ -2,3 +2,10 @@
 body {
   background: green;
 }
+.btn.btn-danger {
+	margin-left: 10px;
+}
+input[type="text"] {
+	margin-left: 5px;
+	transition: all 0.5 ease;
+}
