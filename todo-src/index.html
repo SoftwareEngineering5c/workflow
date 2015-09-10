@@ -23,6 +23,16 @@
             </button>
           </span>
         </div><!-- /input-group -->
+       	
+       	<div class = "radio">
+	    <label><input type="radio" ng-model="value" value="Today" ng-change='newValue(value)' checked = "checked">Today</label>
+	    </div>
+	   <div class = "radio">
+	    <label><input type="radio" ng-model="value" value="Tomorrow" ng-change='newValue(value)'>Tomorrow</label>
+	    </div>
+	    <div class = "radio">
+	    <label><input type="radio" ng-model="value" value="Someday" ng-change='newValue(value)'>Someday</label>
+	    </div>
         
       <h2>stuff i gotta do asap</h2>
       
