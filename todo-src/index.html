@@ -28,7 +28,7 @@
             <!-- http://www.w3schools.com/css/css_float.asp -->
             <li class="list-group-item clearfix" ng-repeat="do in todos">
                 <span class="todo-text">{{do}}</span>
-                <span class=""><input type="text" placeholder="{{do}}" ng-model="submitText">
+                <span class="input-line"><input type="text" placeholder="{{do}}" ng-model="submitText">
                    <button class="btn btn-success" type="button" ng-click="submitEdit(do)">
                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                 </button>

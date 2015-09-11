@@ -7,5 +7,8 @@ body {
 }
 input[type="text"] {
 	margin-left: 5px;
+}
+.input-line {
+	display: none;
 	transition: all 0.5 ease;
 }
