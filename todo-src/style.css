@@ -1,14 +1,18 @@
 /* Styles go here */
+
 body {
-  background: green;
+    background: green;
 }
+
 .btn.btn-danger {
-	margin-left: 10px;
+    margin-left: 10px;
 }
+
 input[type="text"] {
-	margin-left: 5px;
+    margin-left: 5px;
 }
+
 .input-line {
-	display: none;
-	transition: all 0.5 ease;
+    display: none;
+    transition: all 0.5 ease;
 }

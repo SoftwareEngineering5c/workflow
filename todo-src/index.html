@@ -23,7 +23,24 @@
             </span>
         </div>
         <!-- /input-group -->
-        <h2>stuff i gotta do asap</h2>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-model="value" value="Today" ng-change='newValue(value)' checked="checked">Today</label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-model="value" value="Tomorrow" ng-change='newValue(value)'>Tomorrow</label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-model="value" value="Someday" ng-change='newValue(value)'>Someday</label>
+        </div>
+        <span>
+        <button class="btn btn-danger pull-right" type="button" ng-click="deleteAll()" style="margin-top: 15px;margin-right: 16px;">
+          <span class="glyphicon glyphicon-trash " aria-hidden="true"></span>
+        </button>
+        <h2>stuff i gotta do asap <small>({{todos.length}})</small></h2>
+        </span>
         <ul class="list-group">
             <!-- http://www.w3schools.com/css/css_float.asp -->
             <li class="list-group-item clearfix" ng-repeat="do in todos">
