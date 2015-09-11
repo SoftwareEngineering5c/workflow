@@ -2,37 +2,40 @@
 
 var myApp = angular.module('app', []);
 
-myApp.controller('MainCtrl', function ($scope){
-  $scope.todos = ["Learn Angular", "Learn node"];
-  $scope.newItem = "";
+myApp.controller('MainCtrl', function ($scope) {
+    $scope.todos = ["Learn Angular", "Learn node"];
+    $scope.newItem = "";
 
-  $scope.value= 'Today';
-  
-  $scope.newValue = function(value) {
-     console.log(value);
-  }
+    $scope.value = 'Today';
 
-
-  $scope.addItem = function(){
-    console.log("in add");
-    console.log($scope.value);
-    if ($scope.newItem !== ""){
-      //console.log(opt);
-      $scope.newItem = $scope.value + ": " + $scope.newItem;
-      $scope.todos.push($scope.newItem);
-      $scope.newItem = "";
+    $scope.newValue = function (value) {
+        console.log(value);
     }
-  }
-    
-  $scope.deleteItem = function(item){
-    console.log("in delete");
-    var index = $scope.todos.indexOf(item);
-    $scope.todos.splice(index, 1);
-  }
-    
-  
-});
 
+    $scope.addItem = function () {
+        console.log("in add");
+        console.log($scope.value);
+        if ($scope.newItem !== "") {
+            //console.log(opt);
+            $scope.newItem = $scope.value + ": " + $scope.newItem;
+            $scope.todos.push($scope.newItem);
+            $scope.newItem = "";
+        }
+    }
+
+    $scope.deleteItem = function (item) {
+        console.log("in delete");
+        var index = $scope.todos.indexOf(item);
+        $scope.todos.splice(index, 1);
+    }
+
+    $scope.deleteAll = function () {
+        console.log("Deleting all");
+        $scope.todos.length = 0;
+
+    }
+
+});
 
 
 /*************************
@@ -44,5 +47,5 @@ myApp.controller('MainCtrl', function ($scope){
  * - make it prettier
  * - add a due date
  * - add reminder (setInterval)
- * 
+ *
  * *********************/
