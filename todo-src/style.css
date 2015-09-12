@@ -12,7 +12,18 @@ input[type="text"] {
     margin-left: 5px;
 }
 
-.input-line {
+.inputbox {
     display: none;
     transition: all 0.5 ease;
+}
+.crossout {
+	text-decoration: line-through;
+	color: grey;
+	font-style: italic;
+}
+h2 {
+	color: black;
+}
+h2 >small {
+	color: grey;
 }

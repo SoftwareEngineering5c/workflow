@@ -2,9 +2,14 @@
 
 var myApp = angular.module('app', []);
 
+
+
+
 myApp.controller('MainCtrl', function($scope) {
     $scope.todos = ["Learn Angular", "Learn node"];
     $scope.newItem = "";
+    $scope.currentEditIndex;
+    $scope.submitText = "";
 
     $scope.addItem = function() {
         console.log("in add");
@@ -24,20 +29,24 @@ myApp.controller('MainCtrl', function($scope) {
     }
 
     $scope.editItem = function(item) {
-        var index = $scope.todos.indexOf(item);
-        var todo = $scope.todos[index];
-        todo = angular.element(todo);
-        todo.find(angular.element('.todo-text')).css('text-decoration', 'line-through');
+        console.log("Editing current index");
+        $scope.currentEditIndex = $scope.todos.indexOf(item);
     }
-    $scope.submitEdit = function(item) {
+
+    $scope.submitEdit = function(item, submitText) {
         var index = $scope.todos.indexOf(item);
-        var todo = $scope.todos[index];
-        todo.text = $scope.submitText;
+        $scope.todos[index] = submitText;
+        $scope.currentEditIndex = -1;
+        $scope.submitText = "";
     }
+
     $scope.deleteAll = function() {
         console.log("Deleting all");
         $scope.todos.length = 0;
+    }
 
+    $scope.checkIndex = function(item) {
+      return $scope.currentEditIndex == $scope.todos.indexOf(item);
     }
 });
 
