@@ -1,2 +1,29 @@
 /* Styles go here */
 
+body {
+    background: green;
+}
+
+.btn.btn-danger {
+    margin-left: 10px;
+}
+
+input[type="text"] {
+    margin-left: 5px;
+}
+
+.inputbox {
+    display: none;
+    transition: all 0.5 ease;
+}
+.crossout {
+	text-decoration: line-through;
+	color: grey;
+	font-style: italic;
+}
+h2 {
+	color: black;
+}
+h2 >small {
+	color: grey;
+}
