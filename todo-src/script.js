@@ -2,11 +2,16 @@
 
 var myApp = angular.module('app', []);
 
-
-
-
 myApp.controller('MainCtrl', function($scope) {
-    $scope.todos = ["Learn Angular", "Learn node"];
+    $scope.todos = [
+    {
+        text:"Learn Angular",
+        done: false
+    }, {
+        text: "Learn node",
+        done: false
+    }];
+
     $scope.newItem = "";
     $scope.currentEditIndex;
     $scope.submitText = "";
@@ -14,16 +19,14 @@ myApp.controller('MainCtrl', function($scope) {
 
 
     $scope.addItem = function() {
-        console.log("in add");
+        //console.log("in add");
         console.log($scope.value);
         if ($scope.newItem !== "") {
             //console.log(opt);
-            $scope.newItem = $scope.value + ": " + $scope.newItem;
-            $scope.todos.push($scope.newItem,{text:$scope.todoText, done:false});
+            $scope.newItem.text = $scope.value + ": " + $scope.newItem.text;
+            $scope.newItem.done = false;
+            $scope.todos.push($scope.newItem);
             $scope.newItem = "";
-
-            
-
         }
     }
 
@@ -40,7 +43,7 @@ myApp.controller('MainCtrl', function($scope) {
 
     $scope.submitEdit = function(item, submitText) {
         var index = $scope.todos.indexOf(item);
-        $scope.todos[index] = submitText;
+        $scope.todos[index].text = submitText;
         $scope.currentEditIndex = -1;
         $scope.submitText = "";
     }
@@ -51,10 +54,10 @@ myApp.controller('MainCtrl', function($scope) {
     }
 
     $scope.checkIndex = function(item) {
-      return $scope.currentEditIndex == $scope.todos.indexOf(item);
+        return $scope.currentEditIndex == $scope.todos.indexOf(item);
     }
 
- 
+
 });
 
 

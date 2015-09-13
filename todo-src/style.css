@@ -17,12 +17,9 @@ li input[type="checkbox"] {
   width: 40px;
 }
 
-.done-true {
-  text-decoration: line-through;
+.done { text-decoration: line-through;
   color: #ddd;
 }
-
-
 
 .inputbox {
     display: none;
