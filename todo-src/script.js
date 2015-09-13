@@ -10,6 +10,8 @@ myApp.controller('MainCtrl', function($scope) {
     $scope.newItem = "";
     $scope.currentEditIndex;
     $scope.submitText = "";
+    $scope.markAll = false;
+
 
     $scope.addItem = function() {
         console.log("in add");
@@ -17,8 +19,11 @@ myApp.controller('MainCtrl', function($scope) {
         if ($scope.newItem !== "") {
             //console.log(opt);
             $scope.newItem = $scope.value + ": " + $scope.newItem;
-            $scope.todos.push($scope.newItem);
+            $scope.todos.push($scope.newItem,{text:$scope.todoText, done:false});
             $scope.newItem = "";
+
+            
+
         }
     }
 
@@ -48,6 +53,8 @@ myApp.controller('MainCtrl', function($scope) {
     $scope.checkIndex = function(item) {
       return $scope.currentEditIndex == $scope.todos.indexOf(item);
     }
+
+ 
 });
 
 

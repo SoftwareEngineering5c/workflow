@@ -12,6 +12,18 @@ input[type="text"] {
     margin-left: 5px;
 }
 
+/*http://codepen.io/Russbrown/pen/IgBuh*/
+li input[type="checkbox"] {
+  width: 40px;
+}
+
+.done-true {
+  text-decoration: line-through;
+  color: #ddd;
+}
+
+
+
 .inputbox {
     display: none;
     transition: all 0.5 ease;
