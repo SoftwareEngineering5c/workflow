@@ -2,23 +2,41 @@
 
 var myApp = angular.module('app', []);
 
-
-
-
 myApp.controller('MainCtrl', function($scope) {
-    $scope.todos = ["Learn Angular", "Learn node"];
+    $scope.todos = [
+    {
+        text:"Learn Angular",
+        done: false
+    }, {
+        text: "Learn node",
+        done: false
+    }];
+
     $scope.newItem = "";
     $scope.currentEditIndex;
     $scope.submitText = "";
+    $scope.markAll = false;
+
 
     $scope.addItem = function() {
-        console.log("in add");
+        //console.log("in add");
         console.log($scope.value);
         if ($scope.newItem !== "") {
+            if($scope.value !== undefined){
             //console.log(opt);
-            $scope.newItem = $scope.value + ": " + $scope.newItem;
+            $scope.newItem.text = $scope.value + ": " + $scope.newItem.text;
+            $scope.newItem.done = false;
             $scope.todos.push($scope.newItem);
             $scope.newItem = "";
+        }
+        else {
+            //console.log(opt);
+            $scope.newItem.text = $scope.newItem.text;
+            $scope.newItem.done = false;
+            $scope.todos.push($scope.newItem);
+            $scope.newItem = "";
+
+        }
         }
     }
 
@@ -35,7 +53,7 @@ myApp.controller('MainCtrl', function($scope) {
 
     $scope.submitEdit = function(item, submitText) {
         var index = $scope.todos.indexOf(item);
-        $scope.todos[index] = submitText;
+        $scope.todos[index].text = submitText;
         $scope.currentEditIndex = -1;
         $scope.submitText = "";
     }
@@ -46,8 +64,10 @@ myApp.controller('MainCtrl', function($scope) {
     }
 
     $scope.checkIndex = function(item) {
-      return $scope.currentEditIndex == $scope.todos.indexOf(item);
+        return $scope.currentEditIndex == $scope.todos.indexOf(item);
     }
+
+
 });
 
 
