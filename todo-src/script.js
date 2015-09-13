@@ -22,11 +22,21 @@ myApp.controller('MainCtrl', function($scope) {
         //console.log("in add");
         console.log($scope.value);
         if ($scope.newItem !== "") {
+            if($scope.value !== undefined){
             //console.log(opt);
             $scope.newItem.text = $scope.value + ": " + $scope.newItem.text;
             $scope.newItem.done = false;
             $scope.todos.push($scope.newItem);
             $scope.newItem = "";
+        }
+        else {
+            //console.log(opt);
+            $scope.newItem.text = $scope.newItem.text;
+            $scope.newItem.done = false;
+            $scope.todos.push($scope.newItem);
+            $scope.newItem = "";
+
+        }
         }
     }
 
