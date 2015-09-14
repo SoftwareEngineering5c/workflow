@@ -5,10 +5,10 @@ var myApp = angular.module('app', []);
 myApp.controller('MainCtrl', function($scope) {
     $scope.todos = [
     {
-        text:"Learn Angular",
+        text:"Today: Learn Angular",
         done: false
     }, {
-        text: "Learn node",
+        text: "Today: Learn node",
         done: false
     }];
 
@@ -17,6 +17,11 @@ myApp.controller('MainCtrl', function($scope) {
     $scope.submitText = "";
     $scope.markAll = false;
 
+    $scope.value= 'Today';
+  
+    $scope.newValue = function(value) {
+        console.log(value);
+    }
 
     $scope.addItem = function() {
         //console.log("in add");
