@@ -5,10 +5,10 @@ var myApp = angular.module('app', []);
 myApp.controller('MainCtrl', function($scope) {
     $scope.todos = [
     {
-        text:"Learn Angular",
+        text:"Today: Learn Angular",
         done: false
     }, {
-        text: "Learn node",
+        text: "Today: Learn node",
         done: false
     }];
 
