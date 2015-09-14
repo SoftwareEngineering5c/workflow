@@ -17,6 +17,11 @@ myApp.controller('MainCtrl', function($scope) {
     $scope.submitText = "";
     $scope.markAll = false;
 
+    $scope.value= 'Today';
+  
+    $scope.newValue = function(value) {
+        console.log(value);
+    }
 
     $scope.addItem = function() {
         //console.log("in add");
