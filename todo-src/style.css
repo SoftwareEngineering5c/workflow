@@ -1,11 +1,7 @@
 /* Styles go here */
 
-<<<<<<< HEAD
-body{
-	background-color: #B9E6E4;	
-=======
 body {
-    background: green;
+    background: #B9E6E4;
 }
 
 .btn.btn-danger {
@@ -39,5 +35,4 @@ h2 {
 }
 h2 >small {
 	color: grey;
->>>>>>> 86e6804c5564a710c5034060ad1bd80d74376414
 }
